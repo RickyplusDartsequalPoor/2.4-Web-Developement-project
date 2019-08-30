@@ -1,3 +1,11 @@
+/* Css Varibales */
+:root {
+  --primary: #4CAF50;
+  --dark: #388E3C;
+  --accent: #795548;
+  --shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,11 +14,13 @@
 /* Navbar */
 
 header {
-  background-color: lightgrey;
+  background-color: var(--primary);
   padding: 25px;
   box-sizing: border-box;
-  position: fixed;
+  position: fixed;  /* Fixes the navbar to the screen so it follows the user as they scroll down */
   width: 100%;
+  /* Specifies the stack order of the navbar the heighest so that it appears over items */
+  z-index: 1;
 }
 
 nav li, nav a {
@@ -21,11 +31,21 @@ nav a {
   text-decoration: none;
   color: black;
   font-size: 20px;
-  padding: 10px 40px;
+  padding: 10px 50px;
   margin-left: 20px;
-  border: 3px black solid
+  border: 3px black solid;
 }
 
 nav a:hover {
-  background-color: limegreen;
+  background-color: var(--accent);
+}
+
+.active {
+  box-shadow: var(--shadow);
+}
+
+/* Splash Page */
+h1 {
+  font-size: 200%;
+
 }
