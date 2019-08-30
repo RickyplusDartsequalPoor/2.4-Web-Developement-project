@@ -9,6 +9,11 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: 'Bubblegum Sans', sans-serif;
+}
+
+a {
+  text-decoration: none;
 }
 
 /* Navbar */
@@ -17,7 +22,7 @@ header {
   background-color: var(--primary);
   padding: 25px;
   box-sizing: border-box;
-  position: fixed;  /* Fixes the navbar to the screen so it follows the user as they scroll down */
+   /*position: fixed;  Fixes the navbar to the screen so it follows the user as they scroll down */
   width: 100%;
   /* Specifies the stack order of the navbar the heighest so that it appears over items */
   z-index: 1;
@@ -28,7 +33,6 @@ nav li, nav a {
 }
 
 nav a {
-  text-decoration: none;
   color: black;
   font-size: 20px;
   padding: 10px 50px;
@@ -45,7 +49,33 @@ nav a:hover {
 }
 
 /* Splash Page */
-h1 {
-  font-size: 200%;
+.splash-page {
+  margin: 20px;
+  background-color: pink;
+  padding: 20px 50px;
+  text-align: center;
+}
 
+h1 {
+  font-size: 400%;
+  margin-bottom: 40px;
+
+}
+.splash-page img {
+  margin-bottom: 40px;
+  padding: 0 40px;
+}
+
+.splash-page a {
+  color: white;
+  border: 3px red solid;
+   border-radius: 5px;
+  padding: 8px 50px;
+  font-size: 200%;
+  margin-bottom: 40px;
+  background-color: red;
+}
+
+.splash-page a:hover {
+  box-shadow: var(--shadow);
 }
