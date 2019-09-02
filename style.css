@@ -49,43 +49,47 @@ nav a:hover {
 }
 
 /* Splash Page */
-.splash-page {
-  /* background-color: yellow; */
+.landing-page {
+  background-color: yellow;
   text-align: center;
   height: 80vh;
+  padding: 1px 0 0 0;
+  margin: -1px auto 0 auto;
 }
 
 h1 {
   font-size: 800%;
-  margin: 100px;
+  margin: 80px;
   /* text-shadow: 3px 2px var(--primary); */
   /* color: var(--primary); */
 
 }
-.splash-page img {
-  margin-bottom: 150px;
+.landing-page img {
+  margin-bottom: 100px;
   padding: 0 10px;
 }
 
-.splash-page a {
+.landing-page a {
   color: white;
   border: 3px red solid;
   border-radius: 5px;
   padding: 8px 100px;
   font-size: 200%;
-  /* margin: 100px; */
+  margin: 80px;
   background-color: red;
 }
 
-.splash-page a:hover {
+.landing-page a:hover {
   box-shadow: var(--shadow);
 }
 
 /* How To Trade Section */
 
 .how-to-page {
-  /* background-color: red; */
+  background-color: orange;
   text-align: center;
+  padding: 1px 0 0 0;
+  margin: -1px auto 0 auto;
 }
 
 h2 {
@@ -112,4 +116,21 @@ h2 {
 h3 {
   font-size: 200%;
   margin: 20px 0px;
+}
+
+/* Trading Page */
+
+.trading-area {
+  display: grid;
+  grid-template: repeat(2, 100px) / repeat(2, 45%);
+  justify-content: space-evenly;
+  background-color: pink;
+}
+
+.selected-box {
+  background-color: orange;
+}
+
+.selection-box {
+  background-color: red;
 }
