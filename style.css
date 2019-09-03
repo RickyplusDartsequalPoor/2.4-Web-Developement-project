@@ -1,7 +1,7 @@
 /* Css Varibales */
 :root {
   --primary: #4CAF50;
-  --primary-dark: #388E3C;
+  --dark: #388E3C;
   --secondary: #795548;
   --shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
@@ -129,6 +129,12 @@ h3 {
 
 .selected-box {
   background-color: orange;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-auto-rows: 100px;   /* Rezies the row column size (will increase distance between element rows) also auto adds rows */
+  overflow: auto;    /* Adds the scroll feature and the auto specifies that it should appear when content is bigger than the box */
+  height: 200%;
 }
 
 .selection-box {
@@ -136,9 +142,39 @@ h3 {
 }
 
 .selection-menu {
-  background-color: green;
+  background-color: var(--primary);
 }
 
 .menu-item {
-    display: inline-block;  
+  display: inline-block;
+  background-color: red;
+  width: 24%;
+  font-size: 200%;
+}
+
+.menu-item img, p {
+  display: inline-block;
+}
+
+.menu-item p {
+  background-color: pink;
+}
+
+.menu-item img {
+  background-color: lightblue;
+}
+
+
+.selection-area {
+  background-color: var(--dark);
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-auto-rows: 100px;
+  overflow: auto;
+  height: 400%;
+}
+
+.selection-area img {
+  border: 3px solid black
 }
