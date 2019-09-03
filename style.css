@@ -134,3 +134,11 @@ h3 {
 .selection-box {
   background-color: red;
 }
+
+.selection-menu {
+  background-color: green;
+}
+
+.menu-item {
+    display: inline-block;  
+}
