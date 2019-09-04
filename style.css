@@ -143,17 +143,20 @@ h3 {
 
 .selection-menu {
   background-color: var(--primary);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .menu-item {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: left;
   background-color: red;
-  width: 24%;
   font-size: 200%;
 }
 
 .menu-item img, p {
-  display: inline-block;
+
 }
 
 .menu-item p {
