@@ -153,19 +153,9 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: left;
-  /* background-color: red; */
   font-size: 150%;
   border: 2px solid black;
 }
-
-.menu-item p {
-  /* background-color: pink; */
-}
-
-.menu-item img {
-  /* background-color: lightblue; */
-}
-
 
 .selection-area {
   background-color: var(--dark);
