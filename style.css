@@ -121,8 +121,10 @@ h3 {
 /* Trading Page */
 
 .trading-area {
+  margin-top: 200px;
   display: grid;
   grid-template: repeat(2, 100px) / repeat(2, 45%);
+  /* grid-column-gap: 20px; */
   justify-content: space-evenly;
   background-color: pink;
 }
@@ -151,20 +153,17 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: left;
-  background-color: red;
-  font-size: 200%;
-}
-
-.menu-item img, p {
-
+  /* background-color: red; */
+  font-size: 150%;
+  border: 2px solid black;
 }
 
 .menu-item p {
-  background-color: pink;
+  /* background-color: pink; */
 }
 
 .menu-item img {
-  background-color: lightblue;
+  /* background-color: lightblue; */
 }
 
 
@@ -176,8 +175,9 @@ h3 {
   grid-auto-rows: 100px;
   overflow: auto;
   height: 400%;
+  /* justify-content: space-evenly; */
 }
 
 .selection-area img {
-  border: 3px solid black
+  box-shadow: var(--shadow);
 }
