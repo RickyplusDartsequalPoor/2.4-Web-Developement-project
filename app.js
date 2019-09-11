@@ -1,105 +1,115 @@
 
-const misc_div = document.getElementById("menu_misc");
-const food_div = document.getElementById("menu_food");
-const tools_div = document.getElementById("menu_tools");
-const combat_div = document.getElementById("menu_combat");
+const miscDiv = document.getElementById("menu-misc");
+const foodDiv = document.getElementById("menu-food");
+const toolsDiv = document.getElementById("menu-tools");
+const combatDiv = document.getElementById("menu-combat");
 
 const site_selected = document.getElementById("site-selected");
 const site_selection = document.getElementById("site-selection");
 
+var imageArray = document.querySelectorAll(".item-area img")
 
 function main() {
-  misc_div.addEventListener('click', ()=> swap("misc"));
-  food_div.addEventListener('click', ()=> swap("food"));
-  tools_div.addEventListener('click', ()=> swap("tools"));
-  combat_div.addEventListener('click', ()=> swap("combat"));
+  miscDiv.addEventListener('click', ()=> swap("misc"));
+  foodDiv.addEventListener('click', ()=> swap("food"));
+  toolsDiv.addEventListener('click', ()=> swap("tools"));
+  combatDiv.addEventListener('click', ()=> swap("combat"));
 
-
+  for (var i=0; i<imageArray.length; i++) {
+    let num = i
+    imageArray[i].addEventListener('click', ()=> move(imageArray[num]));
+  }
 }
 
-function swap(menu_selection) {
+function move(image) {
+  console.log(image)
+  console.log("success");
+  site_selected.appendChild(image);
+}
+
+function swap(menuSelection) {
   const misc = document.getElementById("misc");
   const food = document.getElementById("food");
   const tools = document.getElementById("tools");
   const combat = document.getElementById("combat");
 
-  if (menu_selection === "misc") {
+  if (menuSelection === "misc") {
     misc.style.display = 'initial';
     food.style.display = 'none';
     tools.style.display = 'none';
     combat.style.display = 'none';
 
-    misc_div.style.backgroundColor = '#388E3C';
-    misc_div.style.borderBottom = 'none';
+    miscDiv.style.backgroundColor = '#388E3C';
+    music_disc_stradiv.style.borderBottom = 'none';
 
     // There must be a more efficent way to reset
-    food_div.style.backgroundColor = '#4CAF50';
-    food_div.style.borderBottom = '2px solid black';
+    foodDiv.style.backgroundColor = '#4CAF50';
+    foodDiv.style.borderBottom = '2px solid black';
 
-    tools_div.style.backgroundColor = '#4CAF50';
-    tools_div.style.borderBottom = '2px solid black';
+    toolsDiv.style.backgroundColor = '#4CAF50';
+    toolsDiv.style.borderBottom = '2px solid black';
 
-    combat_div.style.backgroundColor = '#4CAF50';
-    combat_div.style.borderBottom = '2px solid black';
+    combatDiv.style.backgroundColor = '#4CAF50';
+    combatDiv.style.borderBottom = '2px solid black';
 
   }
 
-  if (menu_selection === "food") {
+  if (menuSelection === "food") {
     misc.style.display = 'none';
     food.style.display = 'initial';
     tools.style.display = 'none';
     combat.style.display = 'none';
 
-    misc_div.style.backgroundColor = '#4CAF50';
-    misc_div.style.borderBottom = '2px solid black';
+    miscDiv.style.backgroundColor = '#4CAF50';
+    miscDiv.style.borderBottom = '2px solid black';
 
-    food_div.style.backgroundColor = '#388E3C';
-    food_div.style.borderBottom = 'none';
+    foodDiv.style.backgroundColor = '#388E3C';
+    foodDiv.style.borderBottom = 'none';
 
-    tools_div.style.backgroundColor = '#4CAF50';
-    tools_div.style.borderBottom = '2px solid black';
+    toolsDiv.style.backgroundColor = '#4CAF50';
+    toolsDiv.style.borderBottom = '2px solid black';
 
-    combat_div.style.backgroundColor = '#4CAF50';
-    combat_div.style.borderBottom = '2px solid black';
+    combatDiv.style.backgroundColor = '#4CAF50';
+    combatDiv.style.borderBottom = '2px solid black';
 
   }
 
-  if (menu_selection === "tools") {
+  if (menuSelection === "tools") {
     misc.style.display = 'none';
     food.style.display = 'none';
     tools.style.display = 'initial';
     combat.style.display = 'none';
 
-    misc_div.style.backgroundColor = '#4CAF50';
-    misc_div.style.borderBottom = '2px solid black';
+    miscDiv.style.backgroundColor = '#4CAF50';
+    miscDiv.style.borderBottom = '2px solid black';
 
-    food_div.style.backgroundColor = '#4CAF50';
-    food_div.style.borderBottom = '2px solid black';
+    foodDiv.style.backgroundColor = '#4CAF50';
+    foodDiv.style.borderBottom = '2px solid black';
 
-    tools_div.style.backgroundColor = '#388E3C';
-    tools_div.style.borderBottom = 'none';
+    toolsDiv.style.backgroundColor = '#388E3C';
+    toolsDiv.style.borderBottom = 'none';
 
-    combat_div.style.backgroundColor = '#4CAF50';
-    combat_div.style.borderBottom = '2px solid black';
+    combatDiv.style.backgroundColor = '#4CAF50';
+    combatDiv.style.borderBottom = '2px solid black';
   }
 
-  if (menu_selection === "combat") {
+  if (menuSelection === "combat") {
     misc.style.display = 'none';
     food.style.display = 'none';
     tools.style.display = 'none';
     combat.style.display = 'initial';
 
-    misc_div.style.backgroundColor = '#4CAF50';
-    misc_div.style.borderBottom = '2px solid black';
+    miscDiv.style.backgroundColor = '#4CAF50';
+    miscDiv.style.borderBottom = '2px solid black';
 
-    food_div.style.backgroundColor = '#4CAF50';
-    food_div.style.borderBottom = '2px solid black';
+    foodDiv.style.backgroundColor = '#4CAF50';
+    foodDiv.style.borderBottom = '2px solid black';
 
-    tools_div.style.backgroundColor = '#4CAF50';
-    tools_div.style.borderBottom = '2px solid black';
+    toolsDiv.style.backgroundColor = '#4CAF50';
+    toolsDiv.style.borderBottom = '2px solid black';
 
-    combat_div.style.backgroundColor = '#388E3C';
-    combat_div.style.borderBottom = 'none';
+    combatDiv.style.backgroundColor = '#388E3C';
+    combatDiv.style.borderBottom = 'none';
   }
 }
 
