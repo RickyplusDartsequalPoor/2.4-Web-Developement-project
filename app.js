@@ -1,3 +1,4 @@
+
 const misc_div = document.getElementById("menu_misc");
 const food_div = document.getElementById("menu_food");
 const tools_div = document.getElementById("menu_tools");
