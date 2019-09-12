@@ -143,10 +143,15 @@ h3 {
   background-color: var(--primary);
 }
 
-#menu_misc {
+#menu-misc {
   background-color: var(--dark);
   border-bottom: none;
 }
+
+/* #menu-misc1 {
+  background-color: var(--dark);
+  border-bottom: none;
+} */
 
 .item-area {
   background-color: var(--dark);
@@ -173,6 +178,14 @@ h3 {
 #misc {
   display: initial;
 }
+
+/* #food1, #tools1, #combat1 {
+  display: none;
+}
+
+#misc1 {
+  display: initial;
+} */
 
 .accept-button {
   text-align: center;
