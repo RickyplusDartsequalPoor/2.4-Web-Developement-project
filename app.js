@@ -1,24 +1,29 @@
+// var miscMenuArray = document.querySelectorAll(".menu-misc");
+// var foodMenuArray = document.querySelectorAll(".menu-food");
+// var toolsMenuArray = document.querySelectorAll(".menu-tools");
+// var combatMenuArray = document.querySelectorAll(".menu-combat");
 
-const miscDiv = document.getElementById("menu-misc");
-const foodDiv = document.getElementById("menu-food");
-const toolsDiv = document.getElementById("menu-tools");
-const combatDiv = document.getElementById("menu-combat");
+const userMiscMenu = document.querySelector(".user-menu-misc");
+const userFoodMenu = document.querySelector(".user-menu-food");
+const userToolsMenu = document.querySelector(".user-menu-tools");
+const userCombatMenu = document.querySelector(".user-menu-combat");
 
-// const miscDiv1 = document.getElementById("menu-misc1");
-// const foodDiv1 = document.getElementById("menu-food1");
-// const toolsDiv1 = document.getElementById("menu-tools1");
-// const combatDiv1 = document.getElementById("menu-combat1");
+const siteMiscMenu = document.querySelector(".site-menu-misc");
+const siteFoodMenu = document.querySelector(".site-menu-food");
+const siteToolsMenu = document.querySelector(".site-menu-tools");
+const siteCombatMenu = document.querySelector(".site-menu-combat");
 
-const misc = document.getElementById("misc");
-const food = document.getElementById("food");
-const tools = document.getElementById("tools");
-const combat = document.getElementById("combat");
+const userMisc = document.querySelector(".user-misc");
+const userFood = document.querySelector(".user-food");
+const userTools = document.querySelector(".user-tools");
+const userCombat = document.querySelector(".user-combat");
 
-// const misc1 = document.getElementById("misc1");
-// const food1 = document.getElementById("food1");
-// const tools1 = document.getElementById("tools1");
-// const combat1 = document.getElementById("combat1");
+const siteMisc = document.querySelector(".site-misc");
+const siteFood = document.querySelector(".site-food");
+const siteTools = document.querySelector(".site-tools");
+const siteCombat = document.querySelector(".site-combat");
 
+var imageArray = document.querySelectorAll(".item-area img")
 
 const userSelection = document.getElementById("user-selection");
 const userSelected = document.getElementById("user-selected");
@@ -26,30 +31,23 @@ const siteSelected = document.getElementById("site-selected");
 const siteSelection = document.getElementById("site-selection");
 
 function main() {
-  miscDiv.addEventListener('click', ()=> swap("misc"));
-  foodDiv.addEventListener('click', ()=> swap("food"));
-  toolsDiv.addEventListener('click', ()=> swap("tools"));
-  combatDiv.addEventListener('click', ()=> swap("combat"));
-
-  // miscDiv1.addEventListener('click', ()=> swap("misc1"));
-  // foodDiv1.addEventListener('click', ()=> swap("food1"));
-  // toolsDiv1.addEventListener('click', ()=> swap("tools1"));
-  // combatDiv1.addEventListener('click', ()=> swap("combat1"));
-  //
-
-  var imageArray = document.querySelectorAll(".item-area img")
+  userMiscMenu.addEventListener('click', ()=> swap("userMisc"));
+  userFoodMenu.addEventListener('click', ()=> swap("userFood"));
+  userToolsMenu.addEventListener('click', ()=> swap("userTools"));
+  userCombatMenu.addEventListener('click', ()=> swap("userCombat"));
+  siteMiscMenu.addEventListener('click', ()=> swap("siteMisc"));
+  siteFoodMenu.addEventListener('click', ()=> swap("siteFood"));
+  siteToolsMenu.addEventListener('click', ()=> swap("siteTools"));
+  siteCombatMenu.addEventListener('click', ()=> swap("siteCombat"));
 
   for (var i=0; i<imageArray.length; i++) {
     let num = i
-    let idDivMisc = misc.contains(imageArray[num]);
-    let idDivFood = food.contains(imageArray[num]);
-    let idDivTools = tools.contains(imageArray[num]);
-    let idDivCombat = combat.contains(imageArray[num]);
-    imageArray[i].addEventListener('click', ()=> move(imageArray[num], idDivMisc, idDivFood, idDivTools, idDivCombat));
+    let imageParent = imageArray[num].parentElement
+    imageArray[num].addEventListener('click', ()=> move(imageArray[num], imageParent))
   }
 }
 
-function move(image, idDivMisc, idDivFood, idDivTools, idDivCombat) {
+function move(image, imageParent) {
   var idUserSelection = userSelection.contains(image);
   var idSiteSelection = siteSelection.contains(image);
   var idUserSelected = userSelected.contains(image);
@@ -64,192 +62,168 @@ function move(image, idDivMisc, idDivFood, idDivTools, idDivCombat) {
   }
 
   if (idUserSelected === true) {
-    if (idDivMisc === true) {
-      misc.appendChild(image);
-    }
-    if (idDivFood === true) {
-      food.appendChild(image);
-    }
-    if (idDivTools === true) {
-      tools.appendChild(image);
-    }
-    if (idDivCombat === true) {
-      combat.appendChild(image);
-    }
+    imageParent.appendChild(image);
   }
 
   if (idSiteSelected === true) {
-    if (idDivMisc === true) {
-      misc.appendChild(image);
-    }
-    if (idDivFood === true) {
-      food.appendChild(image);
-    }
-    if (idDivTools === true) {
-      tools.appendChild(image);
-    }
-    if (idDivCombat === true) {
-      combat.appendChild(image);
-    }
+    imageParent.appendChild(image);
   }
 }
 
 function swap(menuSelection) {
-  if (menuSelection === "misc") {
-    misc.style.display = 'initial';
-    food.style.display = 'none';
-    tools.style.display = 'none';
-    combat.style.display = 'none';
+  console.log("success")
 
-    miscDiv.style.backgroundColor = '#388E3C';
-    miscDiv.style.borderBottom = 'none';
+  if (menuSelection === "userMisc") {
+    userMisc.style.display = 'initial';
+    userFood.style.display = 'none';
+    userTools.style.display = 'none';
+    userCombat.style.display = 'none';
 
-    foodDiv.style.backgroundColor = '#4CAF50';
-    foodDiv.style.borderBottom = '2px solid black';
+    userMiscMenu.style.backgroundColor = '#388E3C';
+    userMiscMenu.style.borderBottom = 'none';
 
-    toolsDiv.style.backgroundColor = '#4CAF50';
-    toolsDiv.style.borderBottom = '2px solid black';
+    userFoodMenu.style.backgroundColor = '#4CAF50';
+    userFoodMenu.style.borderBottom = '2px solid black';
 
-    combatDiv.style.backgroundColor = '#4CAF50';
-    combatDiv.style.borderBottom = '2px solid black';
+    userToolsMenu.style.backgroundColor = '#4CAF50';
+    userToolsMenu.style.borderBottom = '2px solid black';
 
+    userCombatMenu.style.backgroundColor = '#4CAF50';
+    userCombatMenu.style.borderBottom = '2px solid black';
   }
 
-  if (menuSelection === "food") {
-    misc.style.display = 'none';
-    food.style.display = 'initial';
-    tools.style.display = 'none';
-    combat.style.display = 'none';
+  if (menuSelection === "userFood") {
+    userMisc.style.display = 'none';
+    userFood.style.display = 'initial';
+    userTools.style.display = 'none';
+    userCombat.style.display = 'none';
 
-    miscDiv.style.backgroundColor = '#4CAF50';
-    miscDiv.style.borderBottom = '2px solid black';
+    userMiscMenu.style.backgroundColor = '#4CAF50';
+    userMiscMenu.style.borderBottom = '2px solid black';
 
-    foodDiv.style.backgroundColor = '#388E3C';
-    foodDiv.style.borderBottom = 'none';
+    userFoodMenu.style.backgroundColor = '#388E3C';
+    userFoodMenu.style.borderBottom = 'none';
 
-    toolsDiv.style.backgroundColor = '#4CAF50';
-    toolsDiv.style.borderBottom = '2px solid black';
+    userToolsMenu.style.backgroundColor = '#4CAF50';
+    userToolsMenu.style.borderBottom = '2px solid black';
 
-    combatDiv.style.backgroundColor = '#4CAF50';
-    combatDiv.style.borderBottom = '2px solid black';
-
+    userCombatMenu.style.backgroundColor = '#4CAF50';
+    userCombatMenu.style.borderBottom = '2px solid black';
   }
 
-  if (menuSelection === "tools") {
-    misc.style.display = 'none';
-    food.style.display = 'none';
-    tools.style.display = 'initial';
-    combat.style.display = 'none';
+  if (menuSelection === "userTools") {
+    userMisc.style.display = 'none';
+    userFood.style.display = 'none';
+    userTools.style.display = 'initial';
+    userCombat.style.display = 'none';
 
-    miscDiv.style.backgroundColor = '#4CAF50';
-    miscDiv.style.borderBottom = '2px solid black';
+    userMiscMenu.style.backgroundColor = '#4CAF50';
+    userMiscMenu.style.borderBottom = '2px solid black';
 
-    foodDiv.style.backgroundColor = '#4CAF50';
-    foodDiv.style.borderBottom = '2px solid black';
+    userFoodMenu.style.backgroundColor = '#4CAF50';
+    userFoodMenu.style.borderBottom = '2px solid black';
 
-    toolsDiv.style.backgroundColor = '#388E3C';
-    toolsDiv.style.borderBottom = 'none';
+    userToolsMenu.style.backgroundColor = '#388E3C';
+    userToolsMenu.style.borderBottom = 'none';
 
-    combatDiv.style.backgroundColor = '#4CAF50';
-    combatDiv.style.borderBottom = '2px solid black';
+    userCombatMenu.style.backgroundColor = '#4CAF50';
+    userCombatMenu.style.borderBottom = '2px solid black';
   }
 
-  if (menuSelection === "combat") {
-    misc.style.display = 'none';
-    food.style.display = 'none';
-    tools.style.display = 'none';
-    combat.style.display = 'initial';
+  if (menuSelection === "userCombat") {
+    userMisc.style.display = 'none';
+    userFood.style.display = 'none';
+    userTools.style.display = 'none';
+    userCombat.style.display = 'initial';
 
-    miscDiv.style.backgroundColor = '#4CAF50';
-    miscDiv.style.borderBottom = '2px solid black';
+    userMiscMenu.style.backgroundColor = '#4CAF50';
+    userMiscMenu.style.borderBottom = '2px solid black';
 
-    foodDiv.style.backgroundColor = '#4CAF50';
-    foodDiv.style.borderBottom = '2px solid black';
+    userFoodMenu.style.backgroundColor = '#4CAF50';
+    userFoodMenu.style.borderBottom = '2px solid black';
 
-    toolsDiv.style.backgroundColor = '#4CAF50';
-    toolsDiv.style.borderBottom = '2px solid black';
+    userToolsMenu.style.backgroundColor = '#4CAF50';
+    userToolsMenu.style.borderBottom = '2px solid black';
 
-    combatDiv.style.backgroundColor = '#388E3C';
-    combatDiv.style.borderBottom = 'none';
+    userCombatMenu.style.backgroundColor = '#388E3C';
+    userCombatMenu.style.borderBottom = 'none';
   }
 
-  // if (menuSelection === "misc1") {
-  //   misc1.style.display = 'initial';
-  //   food1.style.display = 'none';
-  //   tools1.style.display = 'none';
-  //   combat1.style.display = 'none';
-  //
-  //   miscDiv1.style.backgroundColor = '#388E3C';
-  //   miscDiv1.style.borderBottom = 'none';
-  //
-  //   foodDiv1.style.backgroundColor = '#4CAF50';
-  //   foodDiv1.style.borderBottom = '2px solid black';
-  //
-  //   toolsDiv1.style.backgroundColor = '#4CAF50';
-  //   toolsDiv1.style.borderBottom = '2px solid black';
-  //
-  //   combatDiv.style.backgroundColor = '#4CAF50';
-  //   combatDiv.style.borderBottom = '2px solid black';
-  //
-  // }
-  //
-  // if (menuSelection === "food1") {
-  //   misc1.style.display = 'none';
-  //   food1.style.display = 'initial';
-  //   tools1.style.display = 'none';
-  //   combat1.style.display = 'none';
-  //
-  //   miscDiv1.style.backgroundColor = '#4CAF50';
-  //   miscDiv1.style.borderBottom = '2px solid black';
-  //
-  //   foodDiv1.style.backgroundColor = '#388E3C';
-  //   foodDiv1.style.borderBottom = 'none';
-  //
-  //   toolsDiv1.style.backgroundColor = '#4CAF50';
-  //   toolsDiv1.style.borderBottom = '2px solid black';
-  //
-  //   combatDiv1.style.backgroundColor = '#4CAF50';
-  //   combatDiv1.style.borderBottom = '2px solid black';
-  //
-  // }
-  //
-  // if (menuSelection === "tools1") {
-  //   misc1.style.display = 'none';
-  //   food1.style.display = 'none';
-  //   tools1.style.display = 'initial';
-  //   combat1.style.display = 'none';
-  //
-  //   miscDiv1.style.backgroundColor = '#4CAF50';
-  //   miscDiv1.style.borderBottom = '2px solid black';
-  //
-  //   foodDiv1.style.backgroundColor = '#4CAF50';
-  //   foodDiv1.style.borderBottom = '2px solid black';
-  //
-  //   toolsDiv1.style.backgroundColor = '#388E3C';
-  //   toolsDiv1.style.borderBottom = 'none';
-  //
-  //   combatDiv1.style.backgroundColor = '#4CAF50';
-  //   combatDiv1.style.borderBottom = '2px solid black';
-  // }
-  //
-  // if (menuSelection === "combat1") {
-  //   misc1.style.display = 'none';
-  //   food1.style.display = 'none';
-  //   tools1.style.display = 'none';
-  //   combat1.style.display = 'initial';
-  //
-  //   miscDiv1.style.backgroundColor = '#4CAF50';
-  //   miscDiv1.style.borderBottom = '2px solid black';
-  //
-  //   foodDiv1.style.backgroundColor = '#4CAF50';
-  //   foodDiv1.style.borderBottom = '2px solid black';
-  //
-  //   toolsDiv1.style.backgroundColor = '#4CAF50';
-  //   toolsDiv1.style.borderBottom = '2px solid black';
-  //
-  //   combatDiv1.style.backgroundColor = '#388E3C';
-  //   combatDiv1.style.borderBottom = 'none';
-  // }
+  if (menuSelection === "siteMisc") {
+    siteMisc.style.display = 'initial';
+    siteFood.style.display = 'none';
+    siteTools.style.display = 'none';
+    siteCombat.style.display = 'none';
+
+    siteMiscMenu.style.backgroundColor = '#388E3C';
+    siteMiscMenu.style.borderBottom = 'none';
+
+    siteFoodMenu.style.backgroundColor = '#4CAF50';
+    siteFoodMenu.style.borderBottom = '2px solid black';
+
+    siteToolsMenu.style.backgroundColor = '#4CAF50';
+    siteToolsMenu.style.borderBottom = '2px solid black';
+
+    siteCombatMenu.style.backgroundColor = '#4CAF50';
+    siteCombatMenu.style.borderBottom = '2px solid black';
+  }
+
+  if (menuSelection === "siteFood") {
+    siteMisc.style.display = 'none';
+    siteFood.style.display = 'initial';
+    siteTools.style.display = 'none';
+    siteCombat.style.display = 'none';
+
+    siteMiscMenu.style.backgroundColor = '#4CAF50';
+    siteMiscMenu.style.borderBottom = '2px solid black';
+
+    siteFoodMenu.style.backgroundColor = '#388E3C';
+    siteFoodMenu.style.borderBottom = 'none';
+
+    siteToolsMenu.style.backgroundColor = '#4CAF50';
+    siteToolsMenu.style.borderBottom = '2px solid black';
+
+    siteCombatMenu.style.backgroundColor = '#4CAF50';
+    siteCombatMenu.style.borderBottom = '2px solid black';
+  }
+
+  if (menuSelection === "siteTools") {
+    siteMisc.style.display = 'none';
+    siteFood.style.display = 'none';
+    siteTools.style.display = 'initial';
+    siteCombat.style.display = 'none';
+
+    siteMiscMenu.style.backgroundColor = '#4CAF50';
+    siteMiscMenu.style.borderBottom = '2px solid black';
+
+    siteFoodMenu.style.backgroundColor = '#4CAF50';
+    siteFoodMenu.style.borderBottom = '2px solid black';
+
+    siteToolsMenu.style.backgroundColor = '#388E3C';
+    siteToolsMenu.style.borderBottom = 'none';
+
+    siteCombatMenu.style.backgroundColor = '#4CAF50';
+    siteCombatMenu.style.borderBottom = '2px solid black';
+  }
+
+  if (menuSelection === "siteCombat") {
+    siteMisc.style.display = 'none';
+    siteFood.style.display = 'none';
+    siteTools.style.display = 'none';
+    siteCombat.style.display = 'initial';
+
+    siteMiscMenu.style.backgroundColor = '#4CAF50';
+    siteMiscMenu.style.borderBottom = '2px solid black';
+
+    siteFoodMenu.style.backgroundColor = '#4CAF50';
+    siteFoodMenu.style.borderBottom = '2px solid black';
+
+    siteToolsMenu.style.backgroundColor = '#4CAF50';
+    siteToolsMenu.style.borderBottom = '2px solid black';
+
+    siteCombatMenu.style.backgroundColor = '#388E3C';
+    siteCombatMenu.style.borderBottom = 'none';
+  }
 }
 
 

@@ -41,7 +41,7 @@ nav a {
 }
 
 nav a:hover {
-  background-color: var(--secondary);
+  background-color: var(--dark);
 }
 
 .active {
@@ -123,10 +123,10 @@ h3 {
 .trading-area {
   padding-top: 100px;
   display: grid;
-  grid-template: repeat(2, 100px) / repeat(2, 45%);
+  grid-template: 50px 100px / repeat(2, 45%);
   justify-content: space-evenly;
   background-color: pink;
-  grid-row-gap: 500px;
+  grid-row-gap: 300px;
 }
 
 .selection-menu {
@@ -143,15 +143,11 @@ h3 {
   background-color: var(--primary);
 }
 
-#menu-misc {
+.user-menu-misc, .site-menu-misc {
   background-color: var(--dark);
   border-bottom: none;
 }
 
-/* #menu-misc1 {
-  background-color: var(--dark);
-  border-bottom: none;
-} */
 
 .item-area {
   background-color: var(--dark);
@@ -171,11 +167,11 @@ h3 {
   border: 5px solid #aca271;
 }
 
-#food, #tools, #combat {
+.user-food, .user-tools, .user-combat, .site-food, .site-tools, .site-combat {
   display: none;
 }
 
-#misc {
+.user-misc, .site-misc {
   display: initial;
 }
 
