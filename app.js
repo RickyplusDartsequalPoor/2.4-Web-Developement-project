@@ -23,12 +23,17 @@ const siteFood = document.querySelector(".site-food");
 const siteTools = document.querySelector(".site-tools");
 const siteCombat = document.querySelector(".site-combat");
 
-var imageArray = document.querySelectorAll(".item-area img")
+var imageArray = document.querySelectorAll(".item-area img");
 
 const userSelection = document.getElementById("user-selection");
 const userSelected = document.getElementById("user-selected");
 const siteSelected = document.getElementById("site-selected");
 const siteSelection = document.getElementById("site-selection");
+
+let siteCost = 0;
+let userCost = 0;
+const userCostH3 = document.getElementById("user-cost");
+const siteCostH3 = document.getElementById("site-cost");
 
 function main() {
   userMiscMenu.addEventListener('click', ()=> swap("userMisc"));
@@ -41,9 +46,9 @@ function main() {
   siteCombatMenu.addEventListener('click', ()=> swap("siteCombat"));
 
   for (var i=0; i<imageArray.length; i++) {
-    let num = i
-    let imageParent = imageArray[num].parentElement
-    imageArray[num].addEventListener('click', ()=> move(imageArray[num], imageParent))
+    let num = i;
+    let imageParent = imageArray[num].parentElement;
+    imageArray[num].addEventListener('click', ()=> move(imageArray[num], imageParent));
   }
 }
 
@@ -54,25 +59,31 @@ function move(image, imageParent) {
   var idSiteSelected = siteSelected.contains(image);
 
   if (idUserSelection === true) {
+    let menu = "plus user";
     userSelected.appendChild(image);
+    updateCostTotal(image, menu);
   }
 
   if (idSiteSelection === true) {
+    let menu = "plus site";
     siteSelected.appendChild(image);
+    updateCostTotal(image, menu);
   }
 
   if (idUserSelected === true) {
+    let menu = "minus user";
     imageParent.appendChild(image);
+    updateCostTotal(image, menu);
   }
 
   if (idSiteSelected === true) {
+    let menu = "minus site";
     imageParent.appendChild(image);
+    updateCostTotal(image, menu);
   }
 }
 
 function swap(menuSelection) {
-  console.log("success")
-
   if (menuSelection === "userMisc") {
     userMisc.style.display = 'initial';
     userFood.style.display = 'none';
@@ -226,5 +237,26 @@ function swap(menuSelection) {
   }
 }
 
+function updateCostTotal(image, menu) {
+  if (menu === "plus user") {
+    userCost += 1;
+    userCostH3.innerHTML = userCost;
+  }
 
-main()
+  if (menu === "plus site") {
+    siteCost += 1;
+    siteCostH3.innerHTML = siteCost;
+  }
+
+  if (menu === "minus user") {
+    userCost -= 1;
+    userCostH3.innerHTML = userCost;
+  }
+
+  if (menu === "minus site") {
+    siteCost -= 1;
+    siteCostH3.innerHTML = siteCost;
+  }
+}
+
+main();

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
-
+        <link href="https://fonts.googleapis.com/css?family=Bubblegum+Sans&display=swap" rel="stylesheet">
     <title>MC OFFER.ME</title>
   </head>
   <body>
@@ -20,11 +20,16 @@
     </header>
 
     <section class="trading-area">
+
       <section>
-        <div class="menu-item">
-          <img src="img-menu/shopping_cart.png" alt="Shopping Cart">
-          <h3>You Offer</h3>
-          <img src="img-menu/emerald.png" alt="Minecraft Emerald">
+        <div class="selected-menu">
+          <img src="img-menu/shopping_cart.png" alt="Shopping Cart" class="menu">
+          <h3 class="menu">You Offer</h3>
+          <div class="menu">
+            <h3 id="user-cost">0</h3>
+            <h3>=</h3>
+            <img src="img-menu/emerald.png" alt="Minecraft Emerald">
+          </div>
         </div>
 
         <div class="item-area" id="user-selected">
@@ -34,10 +39,14 @@
       </section>
 
       <section>
-        <div class="menu-item">
-          <img src="img-menu/shopping_cart.png" alt="Shopping Cart">
-          <h3>You Recieve</h3>
-          <img src="img-menu/emerald.png" alt="Minecraft Emerald">
+        <div class="selected-menu">
+          <img src="img-menu/shopping_cart.png" alt="Shopping Cart" class="menu">
+          <h3 class="menu">You Recieve</h3>
+          <div class="menu">
+            <h3 id="user-cost">0</h3>
+            <h3>=</h3>
+            <img src="img-menu/emerald.png" alt="Minecraft Emerald">
+          </div>
         </div>
 
         <div class="item-area" id="site-selected">
@@ -413,6 +422,12 @@
 
       </section>
     </section>
+
+    <!-- <section class="accept-button">
+      <h3>Finalise Trade</h3>
+
+    </section> -->
+
     <footer>
 
     </footer>

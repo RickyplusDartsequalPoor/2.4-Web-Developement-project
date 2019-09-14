@@ -129,9 +129,28 @@ h3 {
   grid-row-gap: 300px;
 }
 
+.selected-menu {
+  background-color: var(--primary);
+  border: 3px solid black;
+  /* padding: 10px; */
+  align-items: center;
+}
+
+.menu {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+
+.selected-menu h3 {
+  font-size: 300%;
+}
+
+
+
 .selection-menu {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  background-color: var(--primary);
 }
 
 .menu-item {
@@ -139,15 +158,13 @@ h3 {
   align-items: center;
   justify-content: left;
   font-size: 150%;
-  border: 2px solid black;
-  background-color: var(--primary);
+  border: 3px solid black;
 }
 
 .user-menu-misc, .site-menu-misc {
   background-color: var(--dark);
   border-bottom: none;
 }
-
 
 .item-area {
   background-color: var(--dark);
@@ -158,6 +175,8 @@ h3 {
   overflow: auto;
   height: 400%;
   padding-top: 20px;
+  border: 3px solid black;
+  border-top: none;
   /* justify-content: space-evenly; */
 }
 
@@ -175,16 +194,11 @@ h3 {
   display: initial;
 }
 
-/* #food1, #tools1, #combat1 {
-  display: none;
-}
-
-#misc1 {
-  display: initial;
-} */
-
 .accept-button {
+  margin: 100px 0px;
+  width: 80%;
   text-align: center;
-  background-color: var(--primary);
+  background-color: #D32F2F;
+  border-radius: 10px;
 
 }
