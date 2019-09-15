@@ -17,6 +17,22 @@ a {
   text-decoration: none;
 }
 
+h1 {
+  font-size: 800%;
+}
+
+h2 {
+  font-size: 400%;
+}
+
+h3 {
+  font-size: 300%;
+}
+
+h4 {
+  font-size: 200%;
+}
+
 /* Navbar */
 
 header {
@@ -57,8 +73,7 @@ nav a:hover {
   margin: -1px auto 0 auto;
 }
 
-h1 {
-  font-size: 800%;
+.landing-page h1 {
   margin: 80px;
   /* text-shadow: 3px 2px var(--primary); */
   /* color: var(--primary); */
@@ -92,8 +107,7 @@ h1 {
   margin: -1px auto 0 auto;
 }
 
-h2 {
-  font-size: 400%;
+.how-to-page h2 {
   margin: 40px 0px;
 }
 
@@ -113,13 +127,11 @@ h2 {
   border-radius: 50%;
 }
 
-h3 {
-  font-size: 200%;
+.how-to-page h4 {
   margin: 20px 0px;
 }
 
 /* Trading Page */
-
 .trading-area {
   padding-top: 100px;
   display: grid;
@@ -132,20 +144,18 @@ h3 {
 .selected-menu {
   background-color: var(--primary);
   border: 3px solid black;
-  /* padding: 10px; */
-  align-items: center;
+  display: flex;
+  padding: 15px;
+  /* justify-content: space-between; */
 }
 
-.menu {
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+.selected-menu .push {
+  margin-left: auto;
 }
 
-.selected-menu h3 {
-  font-size: 300%;
+#user-cost, #site-cost {
+  padding: 0px 10px;
 }
-
-
 
 .selection-menu {
   display: grid;
@@ -177,7 +187,6 @@ h3 {
   padding-top: 20px;
   border: 3px solid black;
   border-top: none;
-  /* justify-content: space-evenly; */
 }
 
 .item-area img {
@@ -195,10 +204,12 @@ h3 {
 }
 
 .accept-button {
-  margin: 100px 0px;
-  width: 80%;
+  margin: 100px auto;
+  margin-top: 400px;
+  width: 50%;
   text-align: center;
   background-color: #D32F2F;
   border-radius: 10px;
-
+  padding: 15px;
+  justify-content: center;
 }

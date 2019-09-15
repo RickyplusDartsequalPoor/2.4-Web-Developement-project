@@ -32,8 +32,10 @@ const siteSelection = document.getElementById("site-selection");
 
 let siteCost = 0;
 let userCost = 0;
-const userCostH3 = document.getElementById("user-cost");
-const siteCostH3 = document.getElementById("site-cost");
+const userCostH2 = document.getElementById("user-cost");
+const siteCostH2 = document.getElementById("site-cost");
+
+const acceptButton = document.querySelector(".accept-button")
 
 function main() {
   userMiscMenu.addEventListener('click', ()=> swap("userMisc"));
@@ -50,6 +52,7 @@ function main() {
     let imageParent = imageArray[num].parentElement;
     imageArray[num].addEventListener('click', ()=> move(imageArray[num], imageParent));
   }
+  acceptButton.addEventListener('click', ()=> accept());
 }
 
 function move(image, imageParent) {
@@ -240,22 +243,50 @@ function swap(menuSelection) {
 function updateCostTotal(image, menu) {
   if (menu === "plus user") {
     userCost += 1;
-    userCostH3.innerHTML = userCost;
+    userCostH2.innerHTML = userCost;
   }
 
   if (menu === "plus site") {
     siteCost += 1;
-    siteCostH3.innerHTML = siteCost;
+    siteCostH2.innerHTML = siteCost;
   }
 
   if (menu === "minus user") {
     userCost -= 1;
-    userCostH3.innerHTML = userCost;
+    userCostH2.innerHTML = userCost;
   }
 
   if (menu === "minus site") {
     siteCost -= 1;
-    siteCostH3.innerHTML = siteCost;
+    siteCostH2.innerHTML = siteCost;
+  }
+
+  if (siteCost === userCost) {
+    acceptButton.style.backgroundColor = '#4CAF50';
+  }
+
+  if (siteCost === 0 && userCost === 0) {
+    acceptButton.style.backgroundColor = '#D32F2F';
+  }
+
+  if (siteCost !== userCost) {
+    acceptButton.style.backgroundColor = '#D32F2F';
+  }
+}
+// function accept(siteSelectedImageArray, userSelectedImageArray, imageUserParentArray, imageSiteParentArray) {
+function accept() {
+  console.log("success");
+  if (siteCost !== userCost) {
+    alert("The items selected are not of equal value!");
+  }
+
+  if (siteCost === 0 && userCost === 0) {
+    alert("You haven't selected any items!");
+  }
+
+  if (siteCost === userCost) {
+    alert("Successful Trade")
+    location.reload()
   }
 }
 
