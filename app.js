@@ -52,6 +52,7 @@ function main() {
     let imageParent = imageArray[num].parentElement;
     imageArray[num].addEventListener('click', ()=> move(imageArray[num], imageParent));
   }
+
   acceptButton.addEventListener('click', ()=> accept());
 }
 
@@ -284,7 +285,7 @@ function accept() {
     alert("You haven't selected any items!");
   }
 
-  if (siteCost === userCost) {
+  if (siteCost === userCost && siteCost > 0) {
     alert("Successful Trade")
     location.reload()
   }

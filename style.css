@@ -41,7 +41,7 @@ header {
   /* position: fixed;  /*Fixes the navbar to the screen so it follows the user as they scroll down */ */
   width: 100%;
   /* Specifies the stack order of the navbar the heighest so that it appears over items */
-  z-index: 1;
+  z-index: 2;
 }
 
 nav li, nav a {
@@ -169,6 +169,7 @@ nav a:hover {
   justify-content: left;
   font-size: 150%;
   border: 3px solid black;
+  cursor: pointer;
 }
 
 .user-menu-misc, .site-menu-misc {
@@ -193,6 +194,7 @@ nav a:hover {
   box-shadow: var(--shadow);
   background-color: #864629;
   border: 5px solid #aca271;
+  cursor: pointer;
 }
 
 .user-food, .user-tools, .user-combat, .site-food, .site-tools, .site-combat {
@@ -212,4 +214,48 @@ nav a:hover {
   border-radius: 10px;
   padding: 15px;
   justify-content: center;
+  cursor: pointer;
 }
+
+/* Question & Answer Page */
+
+.header {
+  margin: 40px;
+  padding: 20px;
+  text-align: center;
+}
+
+.dropdowns {
+  margin: 0px auto;
+  width: 80%;
+}
+
+.dropdown {
+  margin-bottom: 200px;
+  position: relative;
+}
+
+/* .dropdown .long-answer {
+  margin-bottom: 100px;
+  position: relative;
+} */
+
+.dropbtn {
+  background-color: var(--primary);
+  cursor: pointer;
+  border: none;
+  padding: 20px;
+  width: 100%;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--dark);
+  z-index: 1;
+  padding: 20px;
+  font-size: 125%;
+  width: 100%;
+}
+
+.show {display:block;}
