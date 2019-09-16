@@ -50,7 +50,7 @@ nav li, nav a {
 
 nav a {
   color: black;
-  font-size: 20px;
+  font-size: 150%;
   padding: 10px 50px;
   margin-left: 20px;
   border: 3px black solid;
@@ -69,18 +69,18 @@ nav a:hover {
   background-color: yellow;
   text-align: center;
   height: 80vh;
-  padding: 1px 0 0 0;
-  margin: -1px auto 0 auto;
+  /* padding: 1px 0 0 0;
+  margin: -1px auto 0 auto; */
 }
 
 .landing-page h1 {
-  margin: 80px;
+  margin-top: 80px;
   /* text-shadow: 3px 2px var(--primary); */
   /* color: var(--primary); */
 
 }
 .landing-page img {
-  margin-bottom: 100px;
+  margin-top: 80px;
   padding: 0 10px;
 }
 
@@ -90,7 +90,7 @@ nav a:hover {
   border-radius: 5px;
   padding: 8px 100px;
   font-size: 200%;
-  margin: 80px;
+  margin-top: 80px;
   background-color: red;
 }
 
@@ -133,9 +133,10 @@ nav a:hover {
 
 /* Trading Page */
 .trading-area {
-  padding-top: 100px;
+  padding-top: 75px;
   display: grid;
   grid-template: 50px 100px / repeat(2, 45%);
+  /* grid-template: max-content / repeat(2, 45%); */
   justify-content: space-evenly;
   background-color: pink;
   grid-row-gap: 300px;
@@ -145,8 +146,7 @@ nav a:hover {
   background-color: var(--primary);
   border: 3px solid black;
   display: flex;
-  padding: 15px;
-  /* justify-content: space-between; */
+  padding: 15px
 }
 
 .selected-menu .push {
