@@ -38,7 +38,7 @@ h4 {
 header {
   background-color: var(--primary);
   padding: 25px;
-  /* position: fixed;  /*Fixes the navbar to the screen so it follows the user as they scroll down */ */
+  position: fixed;  /*Fixes the navbar to the screen so it follows the user as they scroll down */
   width: 100%;
   /* Specifies the stack order of the navbar the heighest so that it appears over items */
   z-index: 2;
@@ -219,10 +219,11 @@ nav a:hover {
 
 /* Question & Answer Page */
 
-.header {
+.text {
   margin: 40px;
   padding: 20px;
   text-align: center;
+  /* margin-top: 100px; */
 }
 
 .dropdowns {
