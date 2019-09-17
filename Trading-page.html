@@ -26,11 +26,11 @@
           <img src="img-menu/shopping_cart.png" alt="Shopping Cart">
           <img src="img-menu/emerald.png" alt="Minecraft Emerald" class="push">
           <img src="img-menu/equal_sign.png" alt="Equals Sign">
-          <h2 class="cost" id="user-cost">0</h2>
+          <h2 class="cost" id="user-cost">0</h2> <!-- ID used in javascript to allow for this number value to be changed -->
         </div>
 
-        <div class="item-area" id="user-selected">
-
+        <div class="item-area" id="user-selected"> <!-- Item area used multiple times as these areas orgainse the items the same -->
+        <!-- Nothing is here as items are moved into this div through javascript when they are selected -->
         </div>
       </section>
 
@@ -38,7 +38,7 @@
         <div class="selected-menu">
           <h2>You Recieve</h2>
           <img src="img-menu/shopping_cart.png" alt="Shopping Cart">
-          <img src="img-menu/emerald.png" alt="Minecraft Emerald" class="push">
+          <img src="img-menu/emerald.png" alt="Minecraft Emerald" class="push"> <!-- Class push added so that this image and the content past it is pushed left is css -->
           <img src="img-menu/equal_sign.png" alt="Equals Sign">
           <h2 class="cost" id="site-cost">0</h2>
         </div>
@@ -50,7 +50,7 @@
 
       <section>
         <div class="selection-menu">
-          <div class="menu-item user-menu-misc">
+          <div class="menu-item user-menu-misc"> <!-- One of the buttons that allows the user to switch between diffrent types of items-->
             <img src="img-menu/lava_bucket.png" alt="Minecraft Lava Bucket">
             <p>Misc</p>
           </div>
@@ -72,7 +72,7 @@
         </div>
 
         <div class="item-area" id="user-selection">
-          <div class="user-misc">
+          <div class="user-misc"> <!-- Indicates the diffrent menus that are switched between -->
             <img src="img-misc/bamboo.png" alt="Minecraft Bamboo">
             <img src="img-misc/blaze_powder.png" alt="Minecraft Blaze Powder">
             <img src="img-misc/blaze_rod.png" alt="Minecraft Blaze Rod">
@@ -409,19 +409,30 @@
           </div>
         </div>
       </section>
-
-      <!-- <section class="accept-button">
-        <h3>Accept Trade</h3>
-      </section> -->
     </section>
 
-    <section class="accept-button">
+    <section class="accept-button"> <!-- Button where the user accepts the trade -->
       <h3>Accept Trade</h3>
     </section>
 
     <footer>
+      <div class="contact">
+        <a href="https://www.youtube.com" target="_blank"><img src="img-footer/youtube.png" alt="Youtube"></a>
+        <a href="https://www.facebook.com/" target="_blank"><img src="img-footer/facebook.png" alt="Facebook"></a>
+        <a href="https://www.instagram.com/" target="_blank"><img src="img-footer/instagram.png" alt="Instagram"></a>
+      </div>
 
+      <div class="attributation">
+        <p>Icon Arrow made by <a href="https://www.flaticon.com/authors/pixelmeetup" target="_blank" title="Pixelmeetup">Pixelmeetup</a> from <a href="https://www.flaticon.com/" target="_blank" title="Flaticon">www.flaticon.com</a></p>
+        <p>Icons Cart, Yotube, Facebook, and Equal Sign made by <a href="https://www.flaticon.com/authors/freepik" target="_blank" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" target="_blank" title="Flaticon">www.flaticon.com</a></p>
+        <p>MC OFFER is NOT an OFFICIAL MINECRAFT PRODUCT and is NOT APPROVED or ASSOCIATED WITH MOJANG</p>
+        <p>The Minecraft Images used are owned by Mojang and come under their <a href="https://account.mojang.com/terms" target="_blank">Copyright</a></p>
+      </div>
+
+      <div class="copyright">
+        <p>&copy; MC OFFER.ME All Rights Reserved</p>
+      </div>
     </footer>
-    <script src="app.js" charset="utf-8"></script>
+    <script src="app.js" charset="utf-8"></script> <!-- Script loaded last so rest of page can load before -->
   </body>
 </html>
