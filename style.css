@@ -66,15 +66,12 @@ nav a:hover {
 
 /* Splash Page */
 .landing-page {
-  padding-top: 104px; /* This padding prevents the navbar from covering this content */
-  background-color: yellow;
+  padding: 104px 0px; /* This padding prevents the navbar from covering this content */
   text-align: center;
-  height: 80vh;
 }
 
 .landing-page h1 {
-  margin-top: 80px;
-  /* color: var(--primary); */
+  padding-top: 80px;
 
 }
 .landing-page img {
@@ -88,7 +85,7 @@ nav a:hover {
   border-radius: 5px; /* Smoothens the edges of the call to action button*/
   padding: 8px 100px;
   font-size: 200%;
-  margin-top: 80px;
+  /* margin-top: 80px; */
   background-color: red;
 }
 
@@ -99,12 +96,12 @@ nav a:hover {
 /* How To Trade Section */
 
 .how-to-page {
-  background-color: orange;
+  /* background-color: orange; */
   text-align: center;
 }
 
 .how-to-page h2 {
-  margin: 40px 0px;
+  padding: 40px 0px;
 }
 
 .container {
@@ -121,10 +118,12 @@ nav a:hover {
   padding: 40% 0%;
   border: 2px solid black;
   border-radius: 50%;
+  background-color: var(--primary)
 }
 
 .how-to-page h4 {
   margin: 20px 0px;
+  /* background-color: red; */
 }
 
 /* Trading Page */
@@ -133,20 +132,45 @@ nav a:hover {
   display: grid; /* Allows for css grid to be used*/
   grid-template: 50px 100px / repeat(2, 45%); /* The first part defines the row size and the second defines the size of the columns eg 45% percent each of the page */
   justify-content: space-evenly; /* Spaces the content evenly so that it has the same gap on both sides */
-  background-color: pink;
+  /* background-color: pink; */
   grid-row-gap: 300px; /* Defines the gap between the rows */
 }
 
 .selected-menu {
   background-color: var(--primary);
   border: 3px solid black;
-  display: flex; /* Allows for Flexbox to be used */
-  padding: 15px
+  /* display: flex; /* Allows for Flexbox to be used */
+  padding: 15px;
+}
+
+.selected-menu h2 {
+  background-color: orange;
+  width: 80%;
+}
+
+/* .selected-menu .cost {
+  background: pink;
+} */
+
+.selected-menu img {
+  background-color: blue;
+  /* justify-content: flex-start;  */
+}
+
+.test {
+  background-color: brown;
+  padding: 0px 10px;
+  width: 100%;
+  /* order: 0; */
 }
 
 .selected-menu .push {
-  margin-left: auto; /* Pushes the emerald and the content past it to the left of the container */
+  /* margin-left: auto; /* Pushes the emerald and the content past it to the left of the container */
+  /* justify-content: left; */
+  background-color: purple;
+  /* order: 1; */
 }
+
 
 #user-cost, #site-cost {
   padding: 0px 10px;
@@ -160,7 +184,7 @@ nav a:hover {
 
 .menu-item {
   display: flex;
-  align-items: center; /* Vertically ceners the items */
+  align-items: center; /* Vertically centers the items */
   justify-content: left;
   font-size: 150%;
   border: 3px solid black;
@@ -239,14 +263,14 @@ nav a:hover {
 
 /* Used to add more margin bottom for elements that are larger */
 .long-answer {
-  margin-bottom: 200px;
+  margin-bottom: 250px;
 }
 
 .dropbtn {
   background-color: var(--primary);
   cursor: pointer;
   border: none;
-  padding: 20px;
+  padding: 20px 0px;
   width: 100%;
 }
 
@@ -284,4 +308,86 @@ footer {
 
 .contact img {
   padding: 0px 10px;
+}
+
+/* Responsive */
+
+@media only screen and (max-width: 1310px) {
+  .selected-menu {
+    flex-wrap: wrap; /* Allows the content to wrap */
+  }
+
+  /* .selected-menu .push {
+    margin: 0 auto;
+  } */
+
+  .trading-area {
+    grid-row-gap: 400px;
+  }
+
+
+}
+
+@media only screen and (max-width: 1000px) {
+  header {
+    position: static; /* Intentially left empty as the default position static makes nav bigger than page */
+    text-align: center;
+  }
+
+  .landing-page {
+    padding-top: 0px
+  }
+
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .selection-menu {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .column3 {
+    grid-column: 1 / -1; /* Spans the entire column length */
+    width: 40%;
+    margin: 0 auto;
+  }
+
+  .trading-area {
+    padding-top: 80px;
+  }
+
+  .accept-button {
+    margin-top: 450px;
+  }
+
+  .long-answer {
+    margin-bottom: 300px;
+  }
+
+  .header-text {
+    padding-top: 16px
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .trading-area {
+    grid-template: 50px 100px 50px 100px / 95%;
+    grid-template-areas:
+      "user-selected"
+      "user-selection"
+      "site-selected"
+      "site-selection";
+  }
+
+  .site-selected {
+    grid-area: site-selected;
+  }
+
+  .user-selection {
+    grid-area user-selection;
+  }
+
+  .site-selection {
+    grid-area: site-selection;
+  }
 }

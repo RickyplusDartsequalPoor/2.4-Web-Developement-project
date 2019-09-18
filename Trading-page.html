@@ -20,13 +20,17 @@
     </header>
 
     <section class="trading-area">
-      <section>
+      <section class="user-selected">
         <div class="selected-menu">
-          <h2>You Offer</h2>
-          <img src="img-menu/shopping_cart.png" alt="Shopping Cart">
-          <img src="img-menu/emerald.png" alt="Minecraft Emerald" class="push">
-          <img src="img-menu/equal_sign.png" alt="Equals Sign">
-          <h2 class="cost" id="user-cost">0</h2> <!-- ID used in javascript to allow for this number value to be changed -->
+          <div class="test">
+            <h2>You Offer</h2>
+            <img src="img-menu/shopping_cart.png" alt="Shopping Cart">
+          </div>
+          <!-- <div class="push">
+            <img src="img-menu/emerald.png" alt="Minecraft Emerald">
+            <img src="img-menu/equal_sign.png" alt="Equals Sign">
+            <h2 class="cost" id="user-cost">0</h2> <!-- ID used in javascript to allow for this number value to be changed -->
+          <!-- </div> -->
         </div>
 
         <div class="item-area" id="user-selected"> <!-- Item area used multiple times as these areas orgainse the items the same -->
@@ -34,9 +38,9 @@
         </div>
       </section>
 
-      <section>
+      <section class="site-selected">
         <div class="selected-menu">
-          <h2>You Recieve</h2>
+          <h2 class="resize">You Recieve</h2>
           <img src="img-menu/shopping_cart.png" alt="Shopping Cart">
           <img src="img-menu/emerald.png" alt="Minecraft Emerald" class="push"> <!-- Class push added so that this image and the content past it is pushed left is css -->
           <img src="img-menu/equal_sign.png" alt="Equals Sign">
@@ -48,7 +52,7 @@
         </div>
       </section>
 
-      <section>
+      <section class="user-selection">
         <div class="selection-menu">
           <div class="menu-item user-menu-misc"> <!-- One of the buttons that allows the user to switch between diffrent types of items-->
             <img src="img-menu/lava_bucket.png" alt="Minecraft Lava Bucket">
@@ -229,7 +233,7 @@
         </div>
       </section>
 
-      <section>
+      <section class="site-selection">
         <div class="selection-menu">
           <div class="menu-item site-menu-misc">
             <img src="img-menu/lava_bucket.png" alt="Minecraft Lava Bucket">
