@@ -1,5 +1,5 @@
-var dropDownContentArray = document.querySelectorAll(".dropdown-content") //collects all the dropdown content which is waiting to be activated
-var dropDownArray = document.querySelectorAll(".dropbtn") // collects all the drop buttons which open the dropdown content
+var dropDownContentArray = document.querySelectorAll(".dropdown-content"); //collects all the dropdown content which is waiting to be activated
+var dropDownArray = document.querySelectorAll(".dropbtn"); // collects all the drop buttons which open the dropdown content
 
 function main() {
   // .length is used so that more questions can be added into the future

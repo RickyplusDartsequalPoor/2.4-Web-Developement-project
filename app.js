@@ -287,8 +287,8 @@ function accept() {
   }
 
   if (siteCost === userCost && siteCost > 0) {
-    alert("Successful Trade")
-    location.reload() //Reload page to reset page so that the user can trade again
+    alert("Successful Trade");
+    location.reload(); //Reload page to reset page so that the user can trade again
   }
 }
 
